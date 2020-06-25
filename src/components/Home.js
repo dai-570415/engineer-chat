@@ -11,7 +11,7 @@ const Home = () => {
                 <PostsIndex />
                 <Aside />
             </section>
-            <style jsx="true">{`
+            <style jsx>{`
                 .home-page {
                     display: flex;
                     justify-content: center;

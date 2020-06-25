@@ -7,8 +7,7 @@ import TwitterAuth from './TwitterAuth';
 import Loading from '../elements/Loading';
 import GoogleLogo from '../../assets/img/google_logo.png';
 import TwitterLogo from '../../assets/img/twitter_logo.png';
-import Mainback from '../../assets/img/mainback.jpg';
-import LogoWh from '../../assets/img/logo_wh.png';
+import Slide from './Slide';
 
 let result = null;
 const timeout = (msec) => new Promise(resolve => {
@@ -24,11 +23,7 @@ const LazyComponent = ({ history }) => {
   if (result !== null) {
     return (
         <>
-            <div className="main">
-                <h1>伝達力は世界を変える</h1>
-                <img src={LogoWh} className="main-logo" alt="メインロゴ" />
-                <img src={Mainback} className="main-img" alt="メインイメージ" />
-            </div>
+            <Slide />
             <div className="sign">
                 <h2>サインイン</h2>
                 <div className="sns-button twitter" onClick={ TwitterAuth }>
@@ -53,50 +48,6 @@ const LazyComponent = ({ history }) => {
             <style jsx>{`
                 .sign-page {
                     display: flex;
-                }
-                .main {
-                    width: 60%;
-                    position: fixed;
-                    z-index: -1;
-                }
-                .main h1 {
-                    text-align: center;
-                    font-size: 23px;
-                    font-family: 'Noto Serif JP', serif;
-                    letter-spacing: 0.5em;
-                    color: #fff;           
-                    position: absolute;
-                    top: 10%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    -webkit-transform: translate(-50%, -50%);
-                    -ms-transform: translate(-50%, -50%);
-                    filter: drop-shadow(0 0 5px #000E7C);
-                }
-                .main h1::before {
-                    content: "クリエイティブ";
-                    display: block;
-                    text-align: left;
-                    font-size: 8px;
-                    letter-spacing: 0.25em;
-                    color: #fff;
-                    left: 7px;
-                    position: relative;
-                }
-                .main .main-img {
-                    width: 100%;
-                    height: 100vh;
-                    object-fit: cover;
-                    vertical-align: bottom;
-                }
-                .main .main-logo {
-                    width: 60px;
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    -webkit-transform: translate(-50%, -50%);
-                    -ms-transform: translate(-50%, -50%);
                 }
                 .sign {
                     text-align: center;
@@ -205,13 +156,13 @@ const LazyComponent = ({ history }) => {
 
 const Signin = () => {
     return (
-        <React.Fragment>
+        <>
             <div className="sign-page">
                 <Suspense fallback={<Loading />}>
                     <LazyComponent/>
                 </Suspense>
             </div>
-        </React.Fragment>
+        </>
     );
 }
 

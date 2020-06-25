@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // NEWS API(https://newsapi.org/) 
-const keyId = 'Your_Key';
+const keyId = 'Your_Code';
 const URL = `https://newsapi.org/v2/top-headlines?country=jp&apiKey=${keyId}`;
 
 const News = () => {
