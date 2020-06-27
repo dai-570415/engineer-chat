@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 // GAS
-const URL = 'Your_Code';
+const URL = 'Your_Key';
 
 const Anime = () => {
     const [articles, setArticles] = useState([]);

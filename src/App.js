@@ -2,6 +2,7 @@ import React from 'react';
 import './assets/css/App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './components/Home';
+import User from './components/User';
 // components/elements
 import Header from './components/elements/Header';
 import Footer from './components/elements/Footer';
@@ -46,6 +47,7 @@ const App = () => {
           <AuthProvider>
             <Switch>
               <PrivateRoute exact path="/" component={ Home } />
+              <PrivateRoute exact path="/user" component={ User } />
               <Route exact path="/signin" component={ SignInHook } />
               <Route exact path="/signup" component={ SignUpHook } />
             </Switch>

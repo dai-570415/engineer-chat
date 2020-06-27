@@ -4,10 +4,10 @@ import { AuthContext } from './AuthProvider';
 import { withRouter } from 'react-router';
 import GoogleAuth from './GoogleAuth';
 import TwitterAuth from './TwitterAuth';
-import Loading from '../elements/Loading';
 import GoogleLogo from '../../assets/img/google_logo.png';
 import TwitterLogo from '../../assets/img/twitter_logo.png';
 import Slide from './Slide';
+import LoadingC from '../elements/Loading/LoadingC';
 
 let result = null;
 const timeout = (msec) => new Promise(resolve => {
@@ -148,7 +148,7 @@ const LazyComponent = ({ history }) => {
     )
   }
   throw new Promise(async(resolve) => {
-    await timeout(1000);
+    await timeout(4000);
     result = 'lazy';
     resolve();
   })
@@ -158,7 +158,7 @@ const Signin = () => {
     return (
         <>
             <div className="sign-page">
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<LoadingC />}>
                     <LazyComponent/>
                 </Suspense>
             </div>

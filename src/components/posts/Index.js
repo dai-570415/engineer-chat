@@ -146,6 +146,7 @@ const Index = () => {
                     border-right: 1px solid #ccc;
                 }
                 .post-set {
+                    width: 500px;
                     max-width: 500px;
                     margin: 0 auto;
                     background: rgba(255,255,255,.4);
