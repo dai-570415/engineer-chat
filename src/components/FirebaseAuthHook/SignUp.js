@@ -33,9 +33,9 @@ const Signup = ({ history }) => {
                     </div>
                     <div className="or">または</div>
                     <form onSubmit={ handleSubmit }>
-                        <input name="email" type="email" placeholder="メールアドレス" />
-                        <input name="password" type="password" placeholder="パスワード" />
-                        <button type="submit">サインアップ</button>
+                        <input className="create-input" name="email" type="email" placeholder="メールアドレス" />
+                        <input className="create-input" name="password" type="password" placeholder="パスワード" />
+                        <button className="create-button" type="submit">サインアップ</button>
                     </form>
                     <div className="link">
                         <Link to="/">登録ユーザーですか？ログイン</Link>
@@ -105,7 +105,7 @@ const Signup = ({ history }) => {
                     bottom: 5px;
                     position: relative;
                 }
-                input {
+                .create-input {
                     display: block;
                     text-align: left;
                     font-size: 14px;
@@ -116,13 +116,13 @@ const Signup = ({ history }) => {
                     border-radius: 5px;
                     transition: .5s;
                 }
-                input:focus {
+                .create-input:focus {
                     background: #C9E4E6;
                 }
                 ::placeholder {
                     color: #ccc;
                 }
-                button {
+                .create-button {
                     display: block;
                     text-align: center;
                     font-size: 14px;
@@ -135,7 +135,7 @@ const Signup = ({ history }) => {
                     background: #00AEBC;
                     transition: .5s;
                 }
-                button:hover {
+                .create-button:hover {
                     opacity: .5;
                 }
                 .link {

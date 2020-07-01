@@ -11,6 +11,7 @@ import PrivateRoute from './components/FirebaseAuthHook/PrivateRoute';
 import { AuthProvider } from './components/FirebaseAuthHook/AuthProvider';
 import SignInHook from './components/FirebaseAuthHook/SignIn';
 import SignUpHook from './components/FirebaseAuthHook/SignUp';
+import DrawerMail from './components/elements/DrawerMail';
 
 const title = 'エンジニア向けコミュニティアプリ';
 const description = '伝達力は世界を制す。エンジニア向けコミュニティアプリです';
@@ -36,7 +37,7 @@ for (let i = 0; i < headData.length; i++) {
 // ここまでhead情報
 
 document.ondragstart = () => { return false; }
-// document.oncontextmenu = () => { return false; }
+document.oncontextmenu = () => { return false; }
 
 const App = () => {
   return (
@@ -52,6 +53,7 @@ const App = () => {
               <Route exact path="/signup" component={ SignUpHook } />
             </Switch>
           </AuthProvider>
+          <DrawerMail />
         </main>
         <Footer />
       </Router>
